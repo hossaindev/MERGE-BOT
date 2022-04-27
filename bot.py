@@ -36,7 +36,7 @@ if os.path.exists('./downloads') == False:
 
 
 
-@mergeApp.on_message( filters.command(['login']) & filters.private & ~filters.edited )
+@mergeApp.on_message( filters.command(['/login']) & filters.private & ~filters.edited )
 async def allowUser(c:Client, m: Message):
 	if await database.allowedUser(uid=m.from_user.id) is True:
 		await m.reply_text(
